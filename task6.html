@@ -1,0 +1,305 @@
+<!-- SECTION 1 – Array Higher Order Methods Tasks
+Task 1 – forEach() Practice
+let subjects = ["Maths", "Science", "English", "History"]
+Requirements:
+• Use forEach()
+• Print Subject 1: Maths ... Subject 4: History
+• Store result in a variable
+• Question: Why does forEach() return undefined? -->
+
+<script>
+
+    let subjects = ["Maths", "Science", "English", "History"]
+    let newsub = subjects.forEach((c,i,t)=>{
+        console.log("Subject",i+1,":",c);
+    
+    })
+    console.log(newsub);
+    
+</script>
+
+<!-- Reason:
+forEach only perform actions and it wont return values thats why undefined is returned. -->
+
+
+Task 2 – map() Practice
+let prices = [100, 200, 300, 400]
+Requirements:
+• Use map()
+• Add 10% GST
+• Return new array
+• Expected Output: [110, 220, 330, 440]
+
+<script>
+    let prices = [100, 200, 300, 400]
+    let newprices = prices.map((c,i,t)=>{
+        return(c+(c*0.10));
+    })
+    console.log("Output:",newprices);
+</script>
+
+<!-- Task 3 – filter() Practice
+let students = [
+ { name: "A", marks: 45 },
+ { name: "B", marks: 75 },
+ { name: "C", marks: 35 },
+ { name: "D", marks: 85 }
+]
+Requirements:
+• Use filter()
+• Get students scoring above 50
+• Print filtered array -->
+
+<script>
+    let students = [
+        { name: "A", marks: 45 },
+        { name: "B", marks: 75 },
+        { name: "C", marks: 35 },
+        { name: "D", marks: 85 }
+    ]
+
+    let newstud = students.filter((c,i,t)=>{
+        return(c.marks>50)
+    })
+    console.log(newstud)
+
+
+// <!-- Task 4 – find() Practice
+// Use same students array
+// Requirements:
+// • Use find()
+// • Find first student scoring above 50
+// • Print that object
+// • Question: Difference between filter() and find()? -->
+
+    let findstud = students.find((c,i,t)=>{
+        return(c.marks>50)
+    })
+    console.log(findstud);
+    
+</script>
+
+<!-- Difference between filter() and find()?
+
+filter() is used to filter elements using the condition.
+find() is used to find the first value that matches the condition. -->
+
+<!-- Task 5 – reduce() Practice
+let cart = [
+ { item: "Shirt", price: 1000 },
+ { item: "Shoes", price: 2000 },
+ { item: "Watch", price: 3000 }
+]
+Requirements:
+• Use reduce()
+• Calculate total price
+• Bonus: Add 5% tax inside reduce() -->
+
+<script>
+    let cart = [
+        { item: "Shirt", price: 1000 },
+        { item: "Shoes", price: 2000 },
+        { item: "Watch", price: 3000 }
+        ]
+        
+        let newcart=cart.reduce((acc,c,i,t)=>{
+            return(acc+(c.price+(c.price*0.05)))
+        },0)
+        console.log(newcart);
+        
+</script>
+
+<!-- Task 6 – some() Practice
+let numbers = [1, 3, 5, 7, 8]
+Requirement:
+• Check if at least one number is even
+• Output: true -->
+
+<script>
+    let numbers = [1, 3, 5, 7, 8]
+
+    let even = numbers.some((c,i,t)=>{
+        return(c%2==0)
+    })
+    console.log(even);
+    
+
+</script>
+
+<!-- Task 7 – every() Practice
+let ages = [22, 25, 19, 30]
+Requirement:
+• Check if all ages are above 18 -->
+
+<script>
+    let ages = [22, 25, 19, 30]
+
+    let checkage = ages.every((c,i,t)=>{
+        return(c>18)
+    })
+    console.log(checkage);
+    
+</script>
+
+<!-- Task 8 – sort() Practice
+let salaries = [50000, 10000, 70000, 30000]
+Requirements:
+• Sort ascending
+• Sort descending
+• Explain why normal sort() fails for numbers -->
+
+<script>
+    let salaries = [50000, 10000, 70000, 30000]
+    let asc = salaries.sort((a,b)=>{
+        return (a-b)
+    })
+        console.log("Ascending:",asc)
+    let desc = salaries.sort((a,b)=>{
+        return (b-a)
+    })
+    console.log("Decending",desc);
+    
+</script>
+
+<!-- Task 9 – Array Conversion Methods
+let arr = [10, 20, 30, 40]
+Requirements:
+• Convert using toString()
+• Convert using join("-")
+• Expected Output: 10-20-30-40 -->
+
+<script>
+    let arr = [10, 20, 30, 40]
+    let str1=arr.toString()
+    console.log(str1);
+    str2 = arr.join("-")
+    console.log(str2);
+    
+</script>
+<!-- SECTION 2 – String Methods Tasks
+Task 10 – charAt() & charCodeAt()
+let word = "Developer"
+Requirements:
+• Get character at index 4
+• Get ASCII value of character at index 4 -->
+<script>
+    let word = "Developer"
+    let newword = word.charAt(4)
+    let newword1 = word.charCodeAt(4)
+    console.log(newword);
+    console.log(newword1);
+</script>
+<!-- Task 11 – slice()
+let company = "StacklyCompany"
+Extract: Company -->
+<script>
+    let company = "StacklyCompany"
+    let newcompany = company.slice(7,14)
+    console.log(newcompany);
+
+</script>
+<!-- Task 12 – Case Conversion
+let userInput = "javaScript"
+• Convert to uppercase
+• Convert to lowercase -->
+<script>
+    let userInput = "javaScript"
+    let upinput = userInput.toUpperCase()
+    let lwinput = userInput.toLowerCase()
+    console.log(upinput);
+    console.log(lwinput);
+</script>
+<!-- Task 13 – trim()
+let email = "   naveen@gmail.com   "
+Remove unwanted spaces -->
+<script>
+    let email = " naveen@gmail.com "
+    let newemail = email.trim(" ")
+    console.log(newemail);
+</script>
+<!-- Task 14 – includes()
+let message = "Welcome to JavaScript Training"
+Check if "JavaScript" exists -->
+<script>
+    let message = "Welcome to JavaScript Training"
+    let newmessage = message.includes("JavaScript")
+    console.log(newmessage);
+</script>
+<!-- Task 15 – split()
+let movie = "spider-man-no-way-home"
+Convert into array -->
+<script>
+    let movie = "spider-man-no-way-home"
+    let newmovie = movie.split("-")
+    console.log(newmovie);
+</script>
+<!-- Task 16 – indexOf() & lastIndexOf()
+let text = "programming"
+• Find first index of 'm'
+• Find last index of 'm' -->
+<script>
+    let text = "programming"
+    let newtext = text.indexOf("m")
+    let newtext1 = text.lastIndexOf("m")
+</script>
+<!-- Task 17 – replace()
+let tech = "I love python"
+Replace python with javascript -->
+<script>
+    let tech = "I love python"
+    let newtech = tech.replace("python","javascript")
+    console.log(newtech);
+</script>
+<!-- Task 18 – startsWith() & endsWith()
+let filename = "report.pdf"
+• Check if starts with "report"
+• Check if ends with ".pdf" -->
+<script>
+    let filename = "report.pdf"
+    let newfile = filename.startsWith("report")
+    let newfile1 = filename.endsWith(".pdf")
+    console.log(newfile1);
+    console.log(newfile);
+</script>
+<!-- Task 19 – repeat()
+let star = "*"
+Print 10 stars using repeat() -->
+<script>
+    let star = "*"
+    let newstar = star.repeat("10")
+    console.log(newstar);
+</script>
+
+<!-- FINAL TEAM CHALLENGE – Employee Report System
+let employees = [
+ { name: "Naveen", salary: 50000 },
+ { name: "Arun", salary: 30000 },
+ { name: "Kiran", salary: 70000 }
+]
+Requirements:
+• Convert names to uppercase using map()
+• Filter salary > 40000
+• Find first salary > 60000
+• Calculate total salary using reduce()
+• Sort salaries descending -->
+
+<script>
+    let employees = [
+         { name: "Naveen", salary: 50000 },
+         { name: "Arun", salary: 30000 },
+         { name: "Kiran", salary: 70000 }
+        ]
+        let upperCase=employees.map(emp => ({
+            ...emp,
+            name:emp.name.toUpperCase()
+        }))
+        console.log(upperCase);
+        let highSalary=employees.filter(emp =>emp.salary >40000);
+        console.log(highSalary);
+        let highSalary1 = employees.find(emp => emp.salary > 60000);
+        console.log(highSalary1);
+        let totalSalary = employees.reduce((total, emp) => total + emp.salary, 0);
+        console.log(totalSalary);
+        let Employees1 = [...employees].sort((a, b) => b.salary - a.salary);
+        console.log(Employees1);
+</script>
